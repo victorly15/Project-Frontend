@@ -25,7 +25,8 @@ export default function ShoppingCartPage({drawerOpen, setDrawerOpen}:Props) {
     const loginUser = useContext<UserData | undefined | null>(LoginUserContext);
 
     const toggleDrawer = (newOpen : boolean) => () => {
-        setDrawerOpen(newOpen);
+        setCartItemDtoList(undefined);
+            setDrawerOpen(newOpen);
     };
 
     const navigate = useNavigate();

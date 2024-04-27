@@ -5,6 +5,7 @@ import ErrorPage from "../ui/page/ErrorPage";
 import LoginPage from "../ui/page/LoginPage";
 import Checkout from "../ui/page/Checkout";
 import ThankYou from "../ui/page/ThankYou/ThankYou.tsx";
+import RegisterPage from "../ui/page/RegisterPage";
 // import ShoppingCartPage from "../ui/page/ShoppingCartPage";
 
 export const router = createBrowserRouter([
@@ -17,10 +18,10 @@ export const router = createBrowserRouter([
     //     path: "/product/:productId",
     //     element: <ProductDetail/>
     // },
-    // {
-    //     path: "/shoppingcart",
-    //     element: <ShoppingCartPage/>
-    // },
+    {
+        path: "/register",
+        element: <RegisterPage/>
+    },
     {
         path: "/login",
         element: <LoginPage/>

@@ -5,9 +5,11 @@ import {
     GoogleAuthProvider,
     onAuthStateChanged,
     signInWithEmailAndPassword,
+    createUserWithEmailAndPassword,
     signInWithPopup, signOut
 } from "firebase/auth";
 import {UserData} from "../data/user/UserData.ts";
+import { FirebaseError } from '@firebase/util';
 
 
 export const serviceInit = () => {
@@ -25,6 +27,21 @@ export const handleSignInWithEmailAndPassword = async (email: string, password: 
         // Signed in
         return true;
     } catch (error) {
+        console.log(error);
+        return false;
+    }
+}
+
+export const handleSignupWithEmailAndPassword = async (email: string, password: string): Promise<boolean> => {
+    try {
+        const auth = getAuth();
+        await createUserWithEmailAndPassword(auth,email,password);
+        //Signed up
+        return true;
+    } catch (error) {
+        if (error instanceof FirebaseError && error.code === 'auth/email-already-in-use') {
+            return false;
+        }
         console.log(error);
         return false;
     }

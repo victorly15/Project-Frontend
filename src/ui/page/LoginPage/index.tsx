@@ -3,7 +3,7 @@ import {Alert, Box, Divider, Paper, TextField} from "@mui/material";
 import TopNavBar from "../../component/TopNavBar.tsx";
 import Button from "@mui/material/Button";
 import * as FirebaseAuthService from "../../../authService/FriebaseAuthService.ts"
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import {faLeaf} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -49,7 +49,9 @@ export default function LoginPage(){
     }, [loginUser]);
 
     return (
-        <>
+        <Box height={"100vh"} sx={{
+            backgroundImage: 'url(https://img.freepik.com/free-photo/colorful-fish-swim-beautiful-underwater-reef-nature-aquatic-decoration-generated-by-artificial-intelligence_188544-240813.jpg?t=st=1714198076~exp=1714201676~hmac=d2dc2d1821bbac5fadb63090353e7f6af9a17c08dec5907ea67c5964434c749c&w=1480)',
+        }}>
             <TopNavBar/>
 
             <Box display={"flex"} justifyContent={"center"} >
@@ -57,8 +59,14 @@ export default function LoginPage(){
                 <Paper component={"form"} onSubmit={handleSubmit} sx={{width:"400px",
                 px: 3,
                 py:3,
+                    borderRadius: '20px',
+                    backgroundColor: 'rgba(255, 255, 255, 0.5)',
+                    backdropFilter: 'blur(8px)',
                 mt: 6,
-                height: "fit-content"}} elevation={12} square={false}>
+                height: "fit-content"}} elevation={0} square={false}
+
+
+                >
                     <Box textAlign={"center"}>
                         <Typography variant="h4">
                             <FontAwesomeIcon icon={faLeaf} style={{color: "#154406",}} />
@@ -90,12 +98,33 @@ export default function LoginPage(){
                     <Button type="submit" sx={{ borderRadius: '16px' }} variant={"contained"} color={"success"} fullWidth>Login</Button>
                     <Divider sx={{my:2}}/>
                     <GoogleLoginButton onClick={handleGoogleSignIn}/>
+                    <Typography
+                        variant="body1"
+                        sx={{
+                            fontWeight: 400,
+                            lineHeight: "22.44px",
+                            textAlign: "center",
+                            color: "darkolivegreen",
+                            mt: 2,
+                        }}
+                    >
+                        New customer?
+                        <Link
+                            to="/register"
+                            style={{
+                                marginLeft: 3,
+                                color: 'blue',
+                            }}
+                        >
+                            Create your account
+                        </Link>
+                    </Typography>
                 </Box>
             </Box>
 
                 </Paper>
                 </Box>
 
-        </>
+        </Box>
     );
 }

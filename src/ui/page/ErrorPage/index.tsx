@@ -10,14 +10,25 @@ export default function ErrorPage()
     return (
         <>
         <TopNavBar/>
-            <Box  display={"flex"} justifyContent={"center"} alignContent={"center"} height={"50vh"} width={"100vw"}>
-                <img  src={"https://i.gifer.com/origin/78/787899e9d4e4491f797aba5c61294dfc_w200.gif"} alt={"dinasour"}/>
-            </Box>
-            <Box paddingTop={10} textAlign={"center"} alignItems={"center"} justifyContent={"center"} alignContent={"center"} >
+            <Box width={"100vw"} display={"flex"} textAlign={"center"} alignItems={"center"} justifyContent={"center"} alignContent={"center"} >
+            <Box  display={"flex"} textAlign={"center"} alignItems={"center"} justifyContent={"center"} alignContent={"center"} height={"90vh"} width={"60vw"}
+            sx={{
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                backgroundImage: 'url(https://i.gifer.com/origin/78/787899e9d4e4491f797aba5c61294dfc_w200.gif)'
+            }}
+            >
+
+                <Box mt={20} textAlign={"center"} alignItems={"center"} justifyContent={"center"} alignContent={"center"} >
                     <GoHome/>
 
 
+                </Box>
+                {/*<img  src={"https://i.gifer.com/origin/78/787899e9d4e4491f797aba5c61294dfc_w200.gif"} alt={"dinasour"}/>*/}
             </Box>
+            </Box>
+
         </>
     )
 }

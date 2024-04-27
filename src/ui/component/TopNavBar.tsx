@@ -90,7 +90,7 @@ export default function TopNavBar() {
             )
         } else {
             return (
-                <Button size="large" color="success" onClick={() => {
+                <Button size="small" variant={"contained"} color="success" onClick={() => {
                     navigate("/login")
                 }}>Login</Button>)
         }

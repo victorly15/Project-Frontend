@@ -8,15 +8,15 @@ type Props = {
 export default function TransactionTable({transactionDto}: Props) {
 
     return(
-        <TableContainer  component={Paper} elevation={0} sx={{border:"1px solid lightgrey", marginRight: "-1px"}}>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <TableContainer  component={Paper} elevation={0} sx={{border:"0px solid lightgrey", marginRight: "-1px"}}>
+            <Table  aria-label="simple table">
                 <TableHead>
                     <TableRow>
-                        <TableCell sx={{ fontSize:"12px", backgroundColor: 'grey', color: 'white' }}></TableCell>
-                        <TableCell sx={{ fontSize:"12px", backgroundColor: 'grey', color: 'white' }}>Name</TableCell>
-                        <TableCell sx={{ fontSize:"12px", backgroundColor: 'grey', color: 'white' }}>Unit Price</TableCell>
-                        <TableCell sx={{ fontSize:"12px", backgroundColor: 'grey', color: 'white' }}>Quantity</TableCell>
-                        <TableCell sx={{ fontSize:"12px", backgroundColor: 'grey', color: 'white' }}>Subtotal</TableCell>
+                        <TableCell sx={{ fontSize:"12px",  }}></TableCell>
+                        <TableCell sx={{ fontSize:"12px", }}>Name</TableCell>
+                        <TableCell sx={{ fontSize:"12px", }}>Unit Price</TableCell>
+                        <TableCell sx={{ fontSize:"12px",  }}>Quantity</TableCell>
+                        <TableCell sx={{ fontSize:"12px",  }}>Subtotal</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>

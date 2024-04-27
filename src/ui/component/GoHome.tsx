@@ -12,11 +12,14 @@ export default function GoHome()
 
     return (
         <Button variant={"outlined"} onClick={handleClick} sx={{
-            mx: 1, fontWeight: "bold", borderWidth: "2px",borderRadius:"20px",
-            borderColor: "black", // Set the border color to black
-            color: "black", // Set the text color to black
+            mx: 1, fontWeight: "bold", borderWidth: "3px",borderRadius:"20px",
+
+            borderColor: "white", // Set the border color to black
+            color: "white", // Set the text color to black
             '&:hover': {
-                backgroundColor: 'black', // Set hover background color to black
+                // backgroundColor: 'black',
+                borderColor: "white",
+                borderWidth: "3px",// Set hover background color to black
                 color: 'white'},
         }}>
             Go back home

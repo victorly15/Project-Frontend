@@ -5,8 +5,10 @@ import { faMinus, faPlus} from "@fortawesome/free-solid-svg-icons";
 import Typography from "@mui/material/Typography";
 
 import * as CartItemApi from "../../../../api/CartItemApi.ts"
-import { useState} from "react";
+import {useContext, useState} from "react";
 import {useNavigate} from "react-router-dom";
+import {UserData} from "../../../../data/user/UserData.ts";
+import {LoginUserContext} from "../../../../context/LoginUserContext.ts";
 
 type Props = {
     quantity: number;
@@ -17,13 +19,17 @@ type Props = {
 export default function QuantitySelector({quantity,pid, handlePlus, handleMinus}:Props){
 
     const navigate = useNavigate();
+    const loginUser = useContext<UserData | undefined | null>(LoginUserContext);
 
     const [addSucess, setAddSucess] = useState<boolean>(false)
     const putCartItem = async () => {
         try {
 
+            if(loginUser){
             await CartItemApi.putUserCart(pid.toString(), quantity.toString());
-            setAddSucess(true);
+            setAddSucess(true);} else {
+                navigate("/login")
+            }
 
             // setAddSucess(false);
         }catch (error) {
@@ -40,6 +46,7 @@ export default function QuantitySelector({quantity,pid, handlePlus, handleMinus}
             <Box>
                 <Button variant={"contained"}
                         color={"success"}
+                        disableElevation={true}
                         sx={{
                             minWidth: "24px",
                             minHeight: "24px",
@@ -63,6 +70,7 @@ export default function QuantitySelector({quantity,pid, handlePlus, handleMinus}
             <Box>
                 <Button variant={"contained"}
                         color={"success"}
+                        disableElevation={true}
                         sx={{
                             minWidth: "24px",
                             minHeight: "24px",
@@ -80,15 +88,16 @@ export default function QuantitySelector({quantity,pid, handlePlus, handleMinus}
             <Box ml={2} mr={2}>
                 <Button  variant={"outlined"}
                          sx={{
-                             mx: 1, fontWeight: "bold", borderWidth: "2px", borderRadius:"20px",
-                             borderColor: "black", // Set the border color to black
+                             mx: 1, fontWeight: "bold", borderWidth: "1px", borderRadius:"20px",
+                             backgroundColor:"whitesmoke",
+                             borderColor: "whitesmoke", // Set the border color to black
                              color: "black", // Set the text color to black
                              '&:hover': {
                                  backgroundColor: 'black', // Set hover background color to black
                                  color: 'white'}, // Set hover text color to white},
                          }}
                          onClick={putCartItem}>
-                    <Typography fontSize={"8px"}>
+                    <Typography fontSize={"10px"}>
                         Add to Cart
                     </Typography>
                 </Button>

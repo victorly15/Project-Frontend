@@ -8,6 +8,8 @@ import LoadingContainer from "../../component/LoadingContainer.tsx";
 import {useNavigate} from "react-router-dom";
 import BackgroundImage from "../../component/BackgroundImage.tsx";
 import Button from "@mui/material/Button";
+import Footer from "../../component/Footer.tsx";
+
 
 export default function ProductListingPage() {
 
@@ -60,13 +62,13 @@ export default function ProductListingPage() {
         <Box>
             <TopNavBar/>
             <BackgroundImage scrollButton={scrollToMiddle}/>
+            <Container>
             <Box my={3} display={"flex"}
                  justifyContent="right"
-                 alignItems="center"
-                 width={"95%"}>
+                 alignItems="center">
                 <Button size={"small"}
                     sx={{
-                        mx: 1, fontWeight: "bold", borderWidth: "2px", borderRadius:"20px",
+                        mx: 1, borderWidth: "1px", borderRadius:"20px",
                         boxShadow: filter === '' ? '0 0 0 0.2rem rgba(64, 64, 64, 0.8)' : 'none',
                         borderColor: "black", // Set the border color to black
                         color: "black", // Set the text color to black
@@ -79,7 +81,7 @@ export default function ProductListingPage() {
                 </Button>
                 <Button variant="outlined" size={"small"}
                         sx={{
-                            mx: 1, fontWeight: "bold", borderWidth: "2px",borderRadius:"20px",
+                            mx: 1, borderWidth: "1px",borderRadius:"20px",
                             boxShadow: filter === 'FG' ? '0 0 0 0.2rem rgba(64, 64, 64, 0.8)' : 'none',
                             borderColor: "black", // Set the border color to black
                             color: "black", // Set the text color to black
@@ -92,7 +94,7 @@ export default function ProductListingPage() {
                 </Button>
                 <Button size={"small"}
                         sx={{
-                            mx: 1, fontWeight: "bold", borderWidth: "2px",borderRadius:"20px",
+                            mx: 1, borderWidth: "1px",borderRadius:"20px",
                             boxShadow: filter === 'MB' ? '0 0 0 0.2rem rgba(64, 64, 64, 0.8)' : 'none',
                             borderColor: "black", // Set the border color to black
                             color: "black", // Set the text color to black
@@ -105,6 +107,7 @@ export default function ProductListingPage() {
                 </Button>
 
             </Box>
+            </Container>
 
             <Container sx={{marginBottom: 5}}>
                 <Grid container id={'cards'} spacing={3}>
@@ -120,6 +123,7 @@ export default function ProductListingPage() {
                     }
                 </Grid>
             </Container>
+            <Footer/>
         </Box>
     )
 }

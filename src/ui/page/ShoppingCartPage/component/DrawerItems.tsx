@@ -42,7 +42,7 @@ export default function DrawerItems({dto, fetchAllCartItems} : Props) {
             <Box >
                 <Box display={"flex"} >
                     <Box>
-                        <Typography fontSize={12}>{dto.name}</Typography>
+                        <Typography fontWeight={"bold"} fontSize={12}>{dto.name}</Typography>
                     </Box>
                 </Box>
                 <Box display={"flex"}>
@@ -50,14 +50,14 @@ export default function DrawerItems({dto, fetchAllCartItems} : Props) {
                         {/*<Typography  fontSize={12} fontWeight={"bold"}>Unit price :</Typography>*/}
                     </Box>
                     <Box>
-                        <Typography fontSize={10} >HKD {dto.price}.00</Typography>
+                        <Typography color={"grey"} fontSize={10} >HKD {dto.price}.00</Typography>
                     </Box>
 
                 </Box>
                 <Box display={"flex"}>
                     <Box display={"flex"} alignItems={"flex-end"}>
-                        <Typography fontSize={10} fontWeight={"bold"}>Subtotal</Typography>
-                        <Typography fontSize={12}>&nbsp;HKD {dto.price * dto.cartQuantity}.00</Typography>
+                        <Typography color={"grey"} fontSize={10} fontWeight={"bold"}>Subtotal</Typography>
+                        <Typography color={"grey"} fontSize={12}>&nbsp;HKD {dto.price * dto.cartQuantity}.00</Typography>
                     </Box>
                     <Box>
 

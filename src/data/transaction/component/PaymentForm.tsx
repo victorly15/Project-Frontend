@@ -34,17 +34,21 @@ export default function PaymentForm({transactionDto}: Props) {
     return (
         <Paper
             // onSubmit={handleSubmit}
-               sx={{width:"500px", border:"1px solid lightgrey",
+
+               sx={{
+                   borderRadius:"20px",
+                   backgroundColor:"whitesmoke",
+                   width:"400px", border:"0px solid lightgrey",
                    px: 3,
                    py:3,
                    // mt: 6,
                    height: "fit-content"}} elevation={0} square={false}>
             <Box display={"flex"} justifyContent={"space-between"}>
                 <Box>
-                    <Typography color={"grey"}>Total</Typography>
+                    <Typography >Payment info -</Typography>
                 </Box>
                 <Box>
-                    <Typography color={"#1c1c1c"}>HKD {transactionDto?.total}.00</Typography>
+                    <Typography color={"grey"}>Total: HKD {transactionDto?.total}.00</Typography>
                 </Box>
 
             </Box>
@@ -98,7 +102,7 @@ export default function PaymentForm({transactionDto}: Props) {
                     </Box>
                 </Box>
                 <Box>
-                    <img width={"50%"} src={"https://i0.wp.com/hostingct.com/img/merchant/credit-cards.jpg?ssl=1"} alt={"visa"}/>
+                    <img style={{backgroundColor: "transparent"}} width={"50%"} src={"https://www.pngitem.com/pimgs/m/282-2823780_mastercard-visa-debit-card-hd-png-download.png"} alt={"visa"}/>
                 </Box>
                 <Box my={3}>
                     <Button onClick={payTransactionByTid}  sx={{ borderRadius: '0px',

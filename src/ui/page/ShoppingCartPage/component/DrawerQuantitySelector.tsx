@@ -53,10 +53,6 @@ export default function DrawerQuantitySelector({fetchAllCartItems, cartItemQuant
     }, [loginUser, stockToAdjust]);
 
 
-
-
-
-
     return (
         <Box mt={1}>
             <Stack direction={"row"} alignItems={"center"}>
