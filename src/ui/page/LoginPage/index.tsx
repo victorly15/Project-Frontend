@@ -10,6 +10,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {UserData} from "../../../data/user/UserData.ts";
 import {LoginUserContext} from "../../../context/LoginUserContext.ts";
 import {GoogleLoginButton} from "react-social-login-buttons";
+import fish from "../../component/cute-fish-with-vegetation.jpg"
 
 export default function LoginPage(){
     const [email, setEmail] = useState('');
@@ -36,6 +37,8 @@ export default function LoginPage(){
         }
     };
 
+    
+
     const handleGoogleSignIn = async () => {
        if  ( await FirebaseAuthService.handleSignInWithGoogle()) {
            navigate(-1);
@@ -50,7 +53,10 @@ export default function LoginPage(){
 
     return (
         <Box height={"100vh"} sx={{
-            backgroundImage: 'url(https://img.freepik.com/free-photo/colorful-fish-swim-beautiful-underwater-reef-nature-aquatic-decoration-generated-by-artificial-intelligence_188544-240813.jpg?t=st=1714198076~exp=1714201676~hmac=d2dc2d1821bbac5fadb63090353e7f6af9a17c08dec5907ea67c5964434c749c&w=1480)',
+            backgroundImage: `url(${fish})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
         }}>
             <TopNavBar/>
 

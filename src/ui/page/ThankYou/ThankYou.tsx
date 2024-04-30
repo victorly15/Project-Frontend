@@ -2,10 +2,9 @@ import {Box, Container} from "@mui/material";
 import TopNavBar from "../../component/TopNavBar.tsx";
 import GoHome from "../../component/GoHome.tsx";
 import Typography from "@mui/material/Typography";
-// import {faLeaf} from "@fortawesome/free-solid-svg-icons";
+import fish from "../../component/small-silver-fish-aquarium-black-background.jpg"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircleCheck} from "@fortawesome/free-solid-svg-icons";
-import Footer from "../../component/Footer.tsx";
 
 
 
@@ -13,7 +12,13 @@ export default function ThankYou() {
     return (
 
 
-        <Box>
+        <Box height={"100vh"} sx={{
+
+            backgroundImage: `url(${fish})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+        }}>
             <TopNavBar/>
         <Container>
 
@@ -21,34 +26,19 @@ export default function ThankYou() {
                 display="flex"
                 justifyContent="center"
                 alignItems="center"
-                // height="60vh"
+
                 textAlign={"center"}
-                // mt={10}
-                zIndex={-1}
 
             >
-                <Box
-
-                    height={{ xs: '65vh',md: '65vh'}}
-
-                    boxShadow={3} p={3}
-                    width={{ xs: '80%', md: '100%' }} // Adjust width for different screen sizes
-                    overflow={"hidden"}
-                    // borderRadius={8}
-                    sx={{
-                        // backgroundImage: `url(https://img.freepik.com/free-photo/betta-fish-with-dress-design-copy-space_23-2148359828.jpg?size=626&ext=jpg&ga=GA1.1.1224184972.1711929600&semt=ais)`,
-
-                        backgroundImage: `url(https://flipaquatics.com/cdn/shop/files/RedKingKongcopy_600x.jpg?v=1692280421)`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        backgroundRepeat: 'no-repeat',
-                    }}>
+                <Box>
                     <Box
+                        mt={10}
 
                         paddingX={5}
-                    padding={5}
+                    padding={10}
                         sx={{
-                            backgroundColor: "rgba(0, 0, 0, 0.5)"
+                            borderRadius: "20px",
+                            backgroundColor: "rgba(0, 0, 0, 0.8)"
                         }}
                     >
                         <Typography fontSize={"50px"} color="white">
@@ -70,9 +60,9 @@ export default function ThankYou() {
                 </Box>
             </Box>
         </Container>
-            <Box mt={3}>
-                <Footer/>
-            </Box>
+            {/*<Box mt={3}>*/}
+            {/*    <Footer/>*/}
+            {/*</Box>*/}
 
         </Box>
     );

@@ -24,6 +24,13 @@ export default function TransactionTable({transactionDto}: Props) {
                         <TransactionProduct key={item.tpid} item={item}/>
 
                     ))}
+
+                    <TableRow>
+
+                        <TableCell/><TableCell/><TableCell/>
+                    <TableCell sx={{ fontSize:"16px", fontWeight:"bold"  }}>Total</TableCell>
+                    <TableCell sx={{ fontSize:"16px", fontWeight:"bold"  }}>{transactionDto.total}.00</TableCell>
+                    </TableRow>
                 </TableBody>
             </Table>
         </TableContainer>

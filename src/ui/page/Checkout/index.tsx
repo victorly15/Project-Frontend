@@ -63,11 +63,7 @@ export default function Checkout() {
                                 <Box>
                                     <PaymentForm transactionDto={transactionDto}/>
                                 </Box>
-
-
                             </Box>
-
-
                             <Box   mt={5}>
                                 <Footer/>
                             </Box>

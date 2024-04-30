@@ -10,6 +10,7 @@ import TopNavBar from "../../component/TopNavBar.tsx";
 import {Paper} from "@mui/material";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faLeaf} from "@fortawesome/free-solid-svg-icons";
+import fishy from "../../component/large-spotted-red-carp-koi-fish-swims-shady-pond-clear-sunny-day-view-from.jpg"
 
 
 
@@ -74,7 +75,11 @@ export default function RegisterPage() {
 
     return (
 
-        <Box sx={{backgroundImage: 'url(https://img.freepik.com/free-photo/cute-fish-near-coral-reef_23-2150699373.jpg?t=st=1714196224~exp=1714199824~hmac=67cf258b34912aa1626884359e80f478331b0cf33af0fffdb0f1884ad220a86f&w=1480'}}
+        <Box sx={{backgroundImage: `url(${fishy})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+        }}
                    component="main"  height={"100vh"} >
 
             <TopNavBar/>
